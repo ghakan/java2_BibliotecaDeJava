@@ -28,15 +28,17 @@
 				}
 				else if(opcion == ('l')){
 
-						comando="ls";
+					comando="ls";
 				}
 				else if(opcion == ('w')){
 
 					comando="whoami";
 				}
 
+				//Utilizamos el constructor ProcessBuilder al que le introducimos el comando y el lo guardamos en una variable
 				ProcessBuilder processBuilder = new ProcessBuilder(comando);
 
+				
 				File dirOut = new File("/home/zubiri/ProyectosJava/resultado.txt");
 				File dirErr = new File("/home/zubiri/ProyectosJava/errores.txt");
 
@@ -47,19 +49,16 @@
 
 				FileReader fr = new FileReader("/home/zubiri/ProyectosJava/resultado.txt");
 
-				BufferedReader br = new BufferedReader(fr); 
-
-	            String s; 
-	            while((s = br.readLine()) != null) 
+	            //String s; 
+	           /* while((s = fr.readLine()) != null) 
 	            { 
 	                System.out.println(s);
 	            }
-	            fr.close();
-				//char [] mostrar = new char[100];
-	            //fr.read(mostrar);
-	            //System.out.println(s);
-	            //fr.close();
-	            
+	            fr.close();*/
+				char [] mostrar = new char[100];
+	            fr.read(mostrar);
+	            System.out.println(mostrar);
+	            fr.close();     
         	}
 			//Si cumplio la condicion de C o R vuelve a preguntar que operacion quiere realizar
 			System.out.println("\n\nVuelve a escribir un comando. Ejemplo: pwd(p), ls(l), whoami(w) o Salir(S) \n");
