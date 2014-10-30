@@ -4,7 +4,7 @@
 	import java.lang.ProcessBuilder.Redirect;
 
 	public class ProcessBuilderEjemplo {
-		public static void main(String[] args) throws IOException, InterruptedException {
+		public static void main(String[] args) throws IOException {
 
 		char opcion;
 		String comando ="date";
